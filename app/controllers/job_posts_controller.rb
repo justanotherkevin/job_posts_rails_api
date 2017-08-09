@@ -3,7 +3,7 @@ class JobPostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = JobPost.all
 
     render json: @posts
   end
@@ -15,7 +15,7 @@ class JobPostsController < ApplicationController
 
   # POST /posts
   def create
-    @post = Post.new(post_params)
+    @post = JobPost.new(post_params)
 
     if @post.save
       render json: @post, status: :created, location: @post
@@ -41,7 +41,7 @@ class JobPostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = JobPost.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
