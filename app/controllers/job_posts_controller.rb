@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class JobPostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
   # GET /posts
