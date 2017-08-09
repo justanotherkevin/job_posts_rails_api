@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-post1 = job_post.create(title: 'First Post', body: 'An Airplane')
-post2 = job_post.create(title: 'Second Post', body: 'A Train')
-post3 = job_post.create(title: 'Third Post', body: 'A Truck')
-post4 = job_post.create(title: 'Fourth Post', body: 'A Boat')
+post1 = JobPost.create(title: 'First Post', body: 'An Airplane')
+post2 = JobPost.create(title: 'Second Post', body: 'A Train')
+post3 = JobPost.create(title: 'Third Post', body: 'A Truck')
+post4 = JobPost.create(title: 'Fourth Post', body: 'A Boat')
