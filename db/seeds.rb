@@ -1,15 +1,29 @@
 require "faker"
 
-# Faker::Job.title
-# Faker::Job.field
-# Faker::Job.key_skill
+def make_skills
+  skills = []
+  rand(5..10).times do
+    skills << Faker::Job.key_skill
+  end
+  skills.join(", ")
+end
 
+def lower_rand_salary
+  rand(6..8) * 1000
+end
+def higher_rand_salary
+  rand(9..20) * 1000
+end
 
-post1 = JobPost.create(title: 'First Post', body: 'An Airplane')
-post2 = JobPost.create(title: 'Second Post', body: 'A Train')
-post3 = JobPost.create(title: 'Third Post', body: 'A Truck')
-post4 = JobPost.create(title: 'Fourth Post', body: 'A Boat')
-
-10.times do
-  JobPost.create(title: Faker::Job.title, body: Faker::Lorem.paragraph(2))
+20.times do
+  JobPost.create(
+    title:          Faker::Job.title,
+    company_name:   Faker::Company.name,
+    summary:        Faker::Lorem.paragraph(4, false, 5),
+    date_created:   Faker::Date.between_except(15.days.ago, 0.days.ago, Date.today),
+    location:       Faker::Address.state + ", " + Faker::Address.state_abbr,
+    skills:         make_skills,
+    lower_salary:   lower_rand_salary,
+    upper_salary:   higher_rand_salary
+    )
 end

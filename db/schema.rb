@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809202722) do
+ActiveRecord::Schema.define(version: 20170811001340) do
 
   create_table "job_posts", force: :cascade do |t|
     t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "summary"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "date_created"
+    t.string   "location"
+    t.string   "skills"
+    t.string   "lower_salary"
+    t.string   "upper_salary"
+    t.string   "company_name"
   end
 
 end
