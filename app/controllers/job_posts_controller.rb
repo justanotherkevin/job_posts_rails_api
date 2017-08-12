@@ -1,19 +1,19 @@
 class JobPostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
-  # GET /posts
+  # GET /job_posts
   def index
     @posts = JobPost.all
 
     render json: @posts
   end
 
-  # GET /posts/1
+  # GET /job_posts/1
   def show
     render json: @post
   end
 
-  # POST /posts
+  # POST /job_posts
   def create
     @post = JobPost.new(post_params)
 
@@ -24,7 +24,7 @@ class JobPostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /posts/1
+  # PATCH/PUT /job_posts/1
   def update
     if @post.update(post_params)
       render json: @post
@@ -33,7 +33,7 @@ class JobPostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
+  # DELETE /job_posts/1
   def destroy
     @post.destroy
   end
@@ -46,6 +46,6 @@ class JobPostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:job_post).permit(:title, :company_name, :location, :skills, :summary, :lower_salary, :upper_salary, :date_created)
     end
 end
