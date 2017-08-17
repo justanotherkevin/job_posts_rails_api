@@ -4,7 +4,6 @@ class JobPostsController < ApplicationController
   # GET /job_posts
   def index
     @posts = JobPost.all
-
     render json: @posts
   end
 
