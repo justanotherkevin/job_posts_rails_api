@@ -22,6 +22,11 @@ end
     summary:        Faker::Lorem.paragraph(4, false, 5),
     date_created:   Faker::Date.between_except(15.days.ago, 0.days.ago, Date.today),
     location:       Faker::Address.state + ", " + Faker::Address.state_abbr,
+    zip:            Faker::Address.zip_code,
+    latitude:       Faker::Address.latitude,
+
+    longitude:      Faker::Address.longitude,
+
     skills:         make_skills,
     lower_salary:   lower_rand_salary,
     upper_salary:   higher_rand_salary
