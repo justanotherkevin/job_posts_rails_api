@@ -11,8 +11,14 @@ end
 def lower_rand_salary
   rand(6..8) * 1000
 end
+
 def higher_rand_salary
   rand(9..20) * 1000
+end
+
+def sample_job_type
+  job_kind = ["full-time","part-time","no-time"]
+  job_kind.sample
 end
 
 20.times do
@@ -24,11 +30,10 @@ end
     location:       Faker::Address.state + ", " + Faker::Address.state_abbr,
     zip:            Faker::Address.zip_code,
     latitude:       Faker::Address.latitude,
-
     longitude:      Faker::Address.longitude,
-
     skills:         make_skills,
     lower_salary:   lower_rand_salary,
-    upper_salary:   higher_rand_salary
+    upper_salary:   higher_rand_salary,
+    job_type:       sample_job_type
     )
 end
