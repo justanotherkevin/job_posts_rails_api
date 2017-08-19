@@ -32,8 +32,7 @@ end
     latitude:       Faker::Address.latitude,
     longitude:      Faker::Address.longitude,
     skills:         make_skills,
-    lower_salary:   lower_rand_salary,
-    upper_salary:   higher_rand_salary,
+    salary:         higher_rand_salary,
     job_type:       sample_job_type
     )
 end
